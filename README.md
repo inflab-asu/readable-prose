@@ -4,7 +4,15 @@ A skill that finds and fixes the sentences that make AI-written English hard to 
 
 ## Install
 
-Copy the folder into your skills directory, for example `~/.claude/skills/readable-prose`. The skill works without the scripts. `find_candidates.py` needs Python 3. It works better with spaCy (`pip install spacy && python -m spacy download en_core_web_sm`) and falls back to simpler heuristics without it.
+**With an agent.** Paste this into Claude Code or any other coding agent:
+
+```
+Install the readable-prose skill from https://github.com/inflab-asu/readable-prose. Clone it into your skills folder (for Claude Code, ~/.claude/skills/readable-prose). If you have no skills folder, clone it anywhere and read its SKILL.md before you edit my writing.
+```
+
+Then ask it to make a draft easier to read.
+
+**By hand.** Copy the folder into your skills directory, for example `~/.claude/skills/readable-prose`. The skill works without the scripts. `find_candidates.py` needs Python 3. It works better with spaCy (`pip install spacy && python -m spacy download en_core_web_sm`) and falls back to simpler heuristics without it.
 
 ## Acknowledge
 Text from language models is often grammatical and still slow to read. 
