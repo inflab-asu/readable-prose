@@ -1,0 +1,8 @@
+schema_version: "1.1"
+name: mostly-clean-docs
+expected_outcome: |
+  Only the two sentences with problems change: "The rate limiter knows when the server is overloaded" (figurative verb)
+  and "The retry budget exhaustion alert threshold" (noun stack). The other nine sentences stay exactly as they were,
+  no sentence is deleted, every number and setting name stays, and the reply to the user is short (at most 150 words).
+context:
+  scaffold_script: place-files.sh

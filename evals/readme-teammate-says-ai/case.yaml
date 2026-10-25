@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: readme-teammate-says-ai
+expected_outcome: |
+  The "How it works" section reads like careful engineering prose. Nouns used as verbs (ticket, calendar), figurative
+  verbs on code (swallows, hates, a policy that decides), the noun stack, the dropped "that" clauses, the long
+  sentence about the rollback window and the rare phrase "cognitive tax" are fixed. The code block, command names,
+  flags, the literal "the server rejects malformed files", and the rest of the README are unchanged.
+context:
+  scaffold_script: place-files.sh

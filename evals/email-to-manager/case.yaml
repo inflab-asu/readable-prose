@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: email-to-manager
+expected_outcome: |
+  email_revised.txt is a short, professional email with the same information: the $12,400 price, 8% over budget,
+  March 3, the two-year term, a 30-minute sync this week, and about 2 weeks for legal review, addressed to Priya and
+  signed by Sam. The noun stack, the dropped "that" clauses, "the forecast model believes", "calendar a sync" and the
+  nested sentence about the legal review are fixed, and the email is not much longer than the original.
+context:
+  scaffold_script: place-files.sh

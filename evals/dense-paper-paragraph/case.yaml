@@ -1,0 +1,11 @@
+schema_version: "1.1"
+name: dense-paper-paragraph
+expected_outcome: |
+  design.tex still compiles, and the seven planted problems are fixed: the dropped "that" after "ensure", "the planner
+  sees", the follower sentence whose subject is far from its verb, the noun stack "leader lease renewal backoff
+  interval", the reduced relative "the epoch the leader last committed", "the timeout breathes" and the ad hoc verb
+  "receipts". The five clean sentences stay exactly as they were, the established terms and literal verbs stay
+  (write-ahead log, solid state drive, round-trip time, fast path, network interface card, the kernel schedules, the
+  server rejects, we log each vote), every number, citation and reference stays, and the paragraph is not much longer.
+context:
+  scaffold_script: place-files.sh

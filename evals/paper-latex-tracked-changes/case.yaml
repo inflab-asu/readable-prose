@@ -1,0 +1,10 @@
+schema_version: "1.1"
+name: paper-latex-tracked-changes
+expected_outcome: |
+  paper.tex marks every edit as tracked changes and still compiles. With the changes accepted, the paragraph has no
+  figurative verbs on the scheduler, restores "that" in the object relative and the complement clause, untangles the
+  long sentence about the primary, breaks up the noun stack, replaces the rare phrases and the ad hoc verb "ledgers",
+  and keeps every claim, number, citation, reference and established term (write-ahead log, the controller
+  rolls the write back, cache the result). changes.md lists the edits.
+context:
+  scaffold_script: place-files.sh

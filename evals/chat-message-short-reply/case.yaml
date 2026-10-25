@@ -1,0 +1,9 @@
+schema_version: "1.1"
+name: chat-message-short-reply
+expected_outcome: |
+  message.txt is a short, casual chat message with the same facts (the infra team, the job, yesterday's config, tabs,
+  a request to file a ticket). The noun stack "deploy pipeline artifact cache invalidation job" is broken up, the
+  subject no longer runs into "breaks", and "ticket" is not used as a verb. The message stays about as short as the
+  original, and the reply to the user is short (at most 80 words).
+context:
+  scaffold_script: place-files.sh

@@ -1,0 +1,29 @@
+\documentclass{article}
+\usepackage{hyperref}
+\newcommand{\Sys}{\textsc{Quill}}
+\begin{document}
+
+\section{Design}
+\label{sec:design}
+\Sys{} replicates each shard on 3 replicas with Raft \cite{raft}.
+The leader appends the entry, the followers acknowledge it, and the leader commits it.
+Each replica keeps a write-ahead log on its own solid state drive.
+We ensure every follower applies the log in order.
+On the fast path, the leader skips the second round trip and replies after one round-trip time.
+The planner sees only the cost estimates, so it cannot separate a cold cache from a slow disk.
+A follower that, after a partition that lasted longer than the election timeout, rejoins the cluster with a stale log truncates its suffix.
+The leader lease renewal backoff interval doubles after each failed renewal, up to 150\,ms.
+Each follower compares its last index with the epoch the leader last committed.
+The timeout breathes with the observed load.
+The leader receipts each append before it replies.
+The kernel schedules the replication thread on the core that owns the network interface card, and the server rejects stale requests (\S\ref{sec:recovery}).
+We log each vote so that recovery can replay it.
+
+\section{Recovery}
+\label{sec:recovery}
+Recovery replays the log.
+
+\begin{thebibliography}{1}
+\bibitem{raft} D. Ongaro and J. Ousterhout. In search of an understandable consensus algorithm. 2014.
+\end{thebibliography}
+\end{document}

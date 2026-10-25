@@ -1,0 +1,33 @@
+\documentclass{article}
+\usepackage{xcolor}
+\usepackage{hyperref}
+\newcommand{\Sys}{\textsc{Tess}}
+\begin{document}
+
+\section{Design}
+\label{sec:design}
+\Sys{} admits a request only if the shard that will serve it has spare memory.
+The scheduler already knows which shard the request reaches,
+    so it decides on the replica itself.
+A request that changes nothing the cache covers skips the admission check.
+\Sys{} uses a write-ahead log to stage each write,
+    and the controller rolls the write back if the shard misses its deadline.
+
+A request that arrives while the primary,
+    the replica that the coordinator promoted after the last failover,
+    is still catching up waits in the queue for at most 40\,ms.
+The per-tenant memory reclamation policy budget caps how much memory one tenant can reclaim.
+Unlike the undo logs of prior systems \cite{ledger2024},
+    a retry carries no theory of the request and runs at most 3 times,
+    and the scheduler ledgers each admission.
+Our measurements show the batching halves tail latency (\S\ref{sec:eval}).
+Clients cache the result for one lease.
+
+\section{Evaluation}
+\label{sec:eval}
+We run \Sys{} on 16 machines.
+
+\begin{thebibliography}{1}
+\bibitem{ledger2024} LEDGER: undo logs for key-value stores. 2024.
+\end{thebibliography}
+\end{document}
